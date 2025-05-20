@@ -1,6 +1,22 @@
 const API_BASE = "https://mp-dashboard-backend.onrender.com";
 let currentApiKey = "";
 
+function register() {
+  const email = document.getElementById("reg-email").value.trim();
+  const password = document.getElementById("reg-password").value.trim();
+
+  fetch(API_BASE + "/register", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password })
+  })
+  .then(r => r.json())
+  .then(data => {
+    if (data.error) return alert("❌ " + data.error);
+    alert("✅ Account created. Now log in.");
+  });
+}
+
 function login() {
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value.trim();
