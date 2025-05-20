@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Developer Dashboard</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-800 min-h-screen p-4 flex flex-col items-center">
+  <div class="w-full max-w-xl bg-white p-6 rounded-2xl shadow-xl">
+    <h1 class="text-2xl font-bold mb-4 text-center">🎮 Developer Dashboard</h1>
+    <div id="login-section">
+      <input id="apiKey" type="text" placeholder="Enter your API Key" class="w-full p-2 mb-4 border rounded" />
+      <button onclick="loadGames()" class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">Load Games</button>
+    </div>
+    <div id="dashboard" class="hidden mt-6">
+      <h2 class="text-xl font-semibold mb-2">Your Games</h2>
+      <ul id="gamesList" class="mb-4 space-y-1 text-sm"></ul>
+      <hr class="my-4" />
+      <h2 class="text-lg font-semibold mb-2">Add New Game</h2>
+      <input id="gameName" type="text" placeholder="Game Name" class="w-full p-2 mb-2 border rounded" />
+      <input id="minPlayers" type="number" placeholder="Min Players" class="w-full p-2 mb-2 border rounded" />
+      <input id="maxPlayers" type="number" placeholder="Max Players" class="w-full p-2 mb-2 border rounded" />
+      <button onclick="createGame()" class="w-full bg-green-600 text-white py-2 rounded hover:bg-green-700">Create Game</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
